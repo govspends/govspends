@@ -1,0 +1,53 @@
+site_name: govspends
+site_description: Public-records investigations of government budgets, built in the open. Every figure traceable to a saved source document.
+site_url: https://govspends.github.io/govspends/
+repo_url: https://github.com/govspends/govspends
+repo_name: govspends/govspends
+edit_uri: edit/main/docs/
+copyright: Text and data CC BY 4.0, scripts MIT. Not affiliated with any government.
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - content.action.edit
+    - content.action.view
+    - toc.follow
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: deep orange
+      toggle: { icon: material/brightness-7, name: Switch to dark mode }
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: deep orange
+      toggle: { icon: material/brightness-4, name: Switch to light mode }
+  icon:
+    repo: fontawesome/brands/github
+    edit: material/pencil
+    view: material/eye
+extra_css: [stylesheets/extra.css]
+hooks: [tools/mkdocs_hooks.py]      # edit links of imported pages point at the government's own repository
+markdown_extensions:
+  - tables
+  - attr_list
+  - md_in_html
+  - footnotes
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - toc: { permalink: true, toc_depth: 3 }
+plugins:
+  - search
+# nav-start (tools/assemble.py fills the navigation from the government repositories at build time)
+nav:
+  - Home: index.md
+  - How govspends is organized: about/structure.md
+  - How to contribute: contributing.md
+# nav-end

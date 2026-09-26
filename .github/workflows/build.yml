@@ -1,0 +1,46 @@
+name: build and deploy
+
+on:
+  push: { branches: [main] }
+  pull_request:
+  workflow_dispatch:
+  repository_dispatch: { types: [government-updated] }   # sent by a government repository after a merge to its main
+  schedule:
+    - cron: "17 9 * * *"                                  # daily safety net in case a dispatch is missed
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency: { group: pages, cancel-in-progress: false }
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: System libraries for WeasyPrint
+        run: sudo apt-get update -q && sudo apt-get install -y -q libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz0b fonts-liberation
+      - run: pip install -r requirements.txt
+      - name: Assemble the site from the government repositories
+        run: python3 tools/assemble.py
+      - name: Build the PDFs from the pages
+        run: python3 tools/build_pdf.py
+      - name: Build the site
+        run: mkdocs build --strict -f build/mkdocs.yml
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: build/site }
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: "${{ steps.deployment.outputs.page_url }}"
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

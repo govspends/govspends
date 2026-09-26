@@ -1,0 +1,6 @@
+mkdocs-material>=9.5
+pymdown-extensions>=10.7
+markdown>=3.6
+weasyprint>=62
+matplotlib>=3.8
+numpy>=1.26

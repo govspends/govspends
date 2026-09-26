@@ -1,0 +1,10 @@
+build/
+site/
+__pycache__/
+.cache/
+# government repositories cloned side by side inside this folder (named as on GitHub) are separate repositories
+/*-national/
+/*-state/
+/*-counties-*/
+/*-cities-*/
+/*-districts-*/

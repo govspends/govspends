@@ -1,0 +1,19 @@
+# Hub registry. Each government lives in its own repository; the hub clones them at build time (tools/assemble.py),
+# reads each repository's jurisdiction.toml, and assembles one website. Jurisdictions listed here are the hub-owned
+# nodes above the governments (countries, states and provinces); their pages are docs/<path>/index.md in this repository.
+#
+# Paths: <country>/<state-or-province>/<level>/<government>  with level = national | state | counties | cities | districts
+# Repositories are named after the path with slashes replaced by dashes: govspends/us-tx-counties-harris.
+
+[jurisdiction."us"]
+name = "United States"
+type = "country"
+
+[jurisdiction."us/tx"]
+name = "Texas"
+type = "state"
+
+[[government]]
+path = "us/tx/counties/harris"
+repo = "https://github.com/govspends/us-tx-counties-harris"
+ref = "main"
