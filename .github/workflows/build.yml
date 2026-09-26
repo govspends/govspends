@@ -19,8 +19,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
         with: { python-version: "3.12" }
       - name: System libraries for WeasyPrint
         run: sudo apt-get update -q && sudo apt-get install -y -q libpango-1.0-0 libpangoft2-1.0-0 libharfbuzz0b fonts-liberation
@@ -31,7 +31,7 @@ jobs:
         run: python3 tools/build_pdf.py
       - name: Build the site
         run: mkdocs build --strict -f build/mkdocs.yml
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with: { path: build/site }
 
   deploy:
@@ -43,4 +43,4 @@ jobs:
       url: "${{ steps.deployment.outputs.page_url }}"
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
