@@ -17,3 +17,8 @@ type = "state"
 path = "us/tx/counties/harris"
 repo = "https://github.com/govspends/us-tx-counties-harris"
 ref = "main"
+
+[[government]]
+path = "us/national"
+repo = "https://github.com/govspends/us-national"
+ref = "main"

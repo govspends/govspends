@@ -8,6 +8,7 @@ Each investigation is a report you can read as web pages (or as a PDF rebuilt fr
 
 | Path | Report | Status |
 |---|---|---|
+| `us/national/fy2026-spending-controls-and-trust-funds` | [United States: how federal spending is controlled, and the Social Security and Medicare trust funds](https://govspends.github.io/govspends/us/national/fy2026-spending-controls-and-trust-funds/) | Revision 1 (2026-10-06), not yet independently reviewed |
 | `us/tx/counties/harris/fy2027-budget` | [Harris County, Texas: FY2027 budget](https://govspends.github.io/govspends/us/tx/counties/harris/fy2027-budget/) | Revision 2 (2026-09-23), independently reviewed |
 
 ## How it is organized
@@ -16,6 +17,7 @@ Every government has **its own repository**, named after its place in the hierar
 
 | Government | Repository | Pages |
 |---|---|---|
+| United States federal government | [govspends/us-national](https://github.com/govspends/us-national) | https://govspends.github.io/govspends/us/national/ |
 | Harris County, Texas | [govspends/us-tx-counties-harris](https://github.com/govspends/us-tx-counties-harris) | https://govspends.github.io/govspends/us/tx/counties/harris/ |
 
 Levels are `national`, `state`, `counties` (county-equivalents such as parishes and boroughs), `cities` (municipalities of any kind) and `districts` (school, hospital, flood-control, port, utility and other special-purpose governments); country and state codes are ISO 3166. A government repository holds `jurisdiction.toml` (its entry: name, level, fiscal year, websites, and its investigations), `docs/` (its profile page and one folder of report pages per investigation) and `investigations/` (the evidence behind each report: sources, data, scripts, notes, manifests, reviews).
@@ -49,7 +51,7 @@ Create a repository `govspends/<country>-<state>-<level>-<slug>` from the shape 
 
 ## Provenance
 
-The Harris County investigation (in its own repository) was prepared on 2026-09-21 with an AI assistant (Claude) working from public records under a person's direction, reviewed independently on 2026-09-23, and revised the same day. Its [audit summary](https://github.com/govspends/us-tx-counties-harris/blob/main/investigations/fy2027-budget/AUDIT_SUMMARY.md) records the method, judgment calls, defects found and fixed, and how to re-verify every figure. Full-page copies of news articles used in the research are kept in a private archive and are not republished here; they are cited by URL.
+The federal investigation (in [govspends/us-national](https://github.com/govspends/us-national)) was prepared on 2026-10-05/06 with an AI assistant (Claude) from government documents only; it began as seven questions whose original answers are kept in its notes, and its [audit summary](https://github.com/govspends/us-national/blob/main/investigations/fy2026-spending-controls-and-trust-funds/AUDIT_SUMMARY.md) lists every correction made when they were checked. The Harris County investigation (in its own repository) was prepared on 2026-09-21 with an AI assistant (Claude) working from public records under a person's direction, reviewed independently on 2026-09-23, and revised the same day. Its [audit summary](https://github.com/govspends/us-tx-counties-harris/blob/main/investigations/fy2027-budget/AUDIT_SUMMARY.md) records the method, judgment calls, defects found and fixed, and how to re-verify every figure. Full-page copies of news articles used in the research are kept in a private archive and are not republished here; they are cited by URL.
 
 ## License
 
