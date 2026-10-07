@@ -22,3 +22,8 @@ ref = "main"
 path = "us/national"
 repo = "https://github.com/govspends/us-national"
 ref = "main"
+
+[[government]]
+path = "us/tx/districts/houston-isd"
+repo = "https://github.com/govspends/us-tx-districts-houston-isd"
+ref = "main"
