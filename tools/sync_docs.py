@@ -73,7 +73,7 @@ def sync(inv):
     for folder,title in groups:
         base=INV if folder=='.' else f'{INV}/{folder}'; files=[]
         for dp,dn,fn in os.walk(base):
-            if folder=='.': dn[:]=[]
+            dn[:]=[] if folder=='.' else [d for d in dn if d!='__pycache__']   # bytecode caches are not part of the evidence
             for f in fn:
                 p=os.path.join(dp,f); files.append((os.path.relpath(p,INV),os.path.getsize(p)))
         files.sort()

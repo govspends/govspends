@@ -8,7 +8,7 @@ Each investigation is a report you can read as web pages (or as a PDF rebuilt fr
 
 | Path | Report | Status |
 |---|---|---|
-| `us/national/fy2026-spending-controls-and-trust-funds` | [United States: how federal spending is controlled, and the Social Security and Medicare trust funds](https://govspends.github.io/govspends/us/national/fy2026-spending-controls-and-trust-funds/) | Revision 1 (2026-10-06), not yet independently reviewed |
+| `us/national/fy2026-spending-controls-and-trust-funds` | [United States: how federal spending is controlled, and the Social Security and Medicare trust funds](https://govspends.github.io/govspends/us/national/fy2026-spending-controls-and-trust-funds/) | Revision 2 (2026-10-12), not yet independently reviewed |
 | `us/tx/counties/harris/fy2027-budget` | [Harris County, Texas: FY2027 budget](https://govspends.github.io/govspends/us/tx/counties/harris/fy2027-budget/) | Revision 2 (2026-09-23), independently reviewed |
 
 ## How it is organized
